@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/styles.css">
+    <title>Tailwind</title>
+</head>
+<body class="flex justify-center">
+    
+    <form class="max-w-md mx-4 self-center px-5 rounded-2xl shadow-lg flex flex-col flex-grow justify-center bg-cblue">
+        <h1 class="p-5 mx-auto text-4xl text-white font-bold">Login</h1>
+
+        <div class="w-[70%] mx-auto">
+            <label for="Username" class="block mb-1 text-white">Username:</label>
+            <input id="Username" required type="text" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Username"> 
+
+            <label for="Password" class="block mb-1 text-white">Password:</label>
+            <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Password">
+        </div>
+
+        <button class="w-1/2 self-center my-4 bg-clightblue font-semibold  border-2 border-transparent hover:border-white">Login</button>
+    </form>
+
+    
+</body>
+</html>
