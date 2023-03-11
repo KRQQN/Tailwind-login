@@ -5,46 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/styles.css">
-    <title>Signup</title>
+    <title>Skapa konto</title>
 </head>
 <body>
-    <form class="max-w-md mx-4 self-center px-5 rounded-2xl shadow-lg flex flex-col flex-grow justify-center bg-cblue">
+    <form id="createUserForm" class="max-w-md mx-4 self-center px-5 rounded-2xl shadow-lg flex flex-col flex-grow justify-center bg-cblue">
         <h1 class="p-5 mx-auto text-4xl text-white font-bold">Skapa konto</h1>
 
-        <div class="w-[95%] mx-auto">
+        <div class="w-[95%] mx-auto flex flex-col">
 
-            <section class="flex space-x-2">
+            <section class="flex space-x-2 mb-2">
                 <div>
-                    <label for="Password" class="block mb-1 text-white">Förnamn:</label>
-                    <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Förnamn">
+                    <label for="fName" class="block mb-1 text-white">Förnamn:</label>
+                    <input id="fName" name="firstName" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Förnamn">
                 </div>
                 <div>
-                    <label for="Password" class="block mb-1 text-white">Efternamn:</label>
-                    <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Efternamn">
+                    <label for="lName" class="block mb-1 text-white">Efternamn:</label>
+                    <input id="lName" name="lastName" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Efternamn">
                 </div>
             </section>
 
-            <label for="Username" class="block mb-1 text-white">Användarnamn:</label>
-            <input id="Username" required type="text" class="w-[50%] mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Användarnamn"> 
+            <section class="flex space-x-2 mb-2">
+                <div>
+                    <label for="uName" class="block mb-1 text-white">Användarnamn:</label>
+                    <input id="uName" name="userName" required type="text" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Användarnamn"> 
+                </div>
+                <div>
+                    <label for="eMail" class="block mb-1 text-white">E-mail:</label>
+                    <input id="eMail" required type="email" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="E-mail"> 
+                </div>
+            </section>
 
-            <label for="Username" class="block mb-1 text-white">E-mail:</label>
-            <input id="Username" required type="text" class="w-[50%] mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="E-mail"> 
-            
             <section class="flex space-x-2">
                 <div>
-                    <label for="Password" class="block mb-1 text-white">Skapa lösenord:</label>
-                    <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Lösenord">
+                    <label for="passwordInput" class="block mb-1 text-white">Skapa lösenord:</label>
+                    <input id="passwordInput" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Lösenord">
                 </div>
                 <div>
-                    <label for="Password" class="block mb-1 text-white">Bekräfta lösenord:</label>
-                    <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Lösenord">
+                    <label for="confPassword" class="block mb-1 text-white">Bekräfta lösenord:</label>
+                    <input id="confPassword" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue blur:border-cligt" placeholder="Lösenord">
                 </div>
+            </section>
+            <div id="error" class="text-white text-lg"></div>
+
+            <section class="flex  space-x-2 my-3">
+                <label for="strNeter" class="w-1/2 text-white">Lösenordsstyrka </label>
+                <meter id='strMeter' name="pswMeter" class="w-1/2" low="0" high="4" value="" max="4"></meter>
             </section>
             
             <!-- användarnamn, e-post, fullständiga namn samt lösenord -->
-            <button class="mt-32 w-1/2 self-center bg-clightblue font-semibold  border-2 border-transparent hover:border-white">Login</button>
+            <button id="submitBtn" class="my-4 w-1/2 self-center bg-clightblue font-semibold  border-2 border-transparent hover:border-white">bekräfta</button>
         </div>
 
     </form>
+
+
+
+
+
+
+    <form id="login" class="mt-6 max-w-md mx-4 self-center px-5 rounded-2xl shadow-lg flex flex-col flex-grow justify-center bg-cblue">
+        <h1 class="p-5 mx-auto text-4xl text-white font-bold">Logga in</h1>
+
+        <div class="w-[70%] mx-auto">
+            <label for="Username" class="block mb-1 text-white">Användarnamn:</label>
+            <input id="Username" required type="text" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Användarnamn"> 
+
+            <label for="Password" class="block mb-1 text-white">Lösenord:</label>
+            <input id="Password" required type="password" class="w-full mb-2 focus:outline-none focus:ring-0 border-4 border-transparent focus:border-clightblue" placeholder="Lösenord">
+        </div>
+
+        <button class="w-1/2 self-center my-4 bg-clightblue font-semibold  border-2 border-transparent hover:border-white">Logga in</button>
+    </form>
+    <script src="./script.js"></script>
+
+
 </body>
 </html>
